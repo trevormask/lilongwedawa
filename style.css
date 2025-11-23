@@ -94,17 +94,18 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 
-/* --- Image Slider Styling --- */
-
 .image-slider-container {
     background-color: #fff;
-    padding: 40px 0; /* Padding is vertical only, allowing slider to go edge-to-edge (almost) */
+    padding: 40px 0; 
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     margin-bottom: 30px;
-    overflow: hidden; /* Necessary to hide the animation overflow */
+    overflow: hidden; 
+    
+    /* --- NEW CODE to Reduce Width --- */
+    max-width: 900px; /* Adjust this value (e.g., 800px or 1000px) */
+    margin: 0 auto 30px auto; /* Center the container on the page */
 }
-
 .image-slider-container h2 {
     margin-bottom: 20px;
 }
