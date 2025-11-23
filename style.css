@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 /* ========================================= */
 /* 🎨 LEDYOC Website Stylesheet - COMPLETE */
 /* ========================================= */
@@ -22,6 +25,26 @@ main {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+
+/* --- Main Page Heading Style (H1) --- */
+main h1 {
+    font-size: 2.5em;
+    color: #004d40; /* Darker green for importance */
+    text-align: center;
+    padding: 30px 0 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffb300; /* Amber underline for emphasis */
+    font-weight: 700;
+}
+
+/* Adjust the H1 font size on mobile */
+@media (max-width: 768px) {
+    main h1 {
+        font-size: 1.8em;
+        padding: 15px 0 5px 0;
+        margin-bottom: 10px;
+    }
+}
 }
 
 /* Header & Navigation */
@@ -491,4 +514,22 @@ footer a {
 .bio {
     font-size: 0.9em;
     color: #666;
+}
+/* --- Center Link and Simple Link Styling --- */
+.center-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cta-link {
+    color: #009688; /* A bright green */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.cta-link:hover {
+    border-bottom: 2px solid #ffb300; /* Subtle hover effect */
 }
