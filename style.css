@@ -349,58 +349,85 @@ footer a:hover {
     /* ... rest of mobile styles ... */
 }
 /* ========================================= */
-/* 📱 Mobile Responsiveness (Media Queries) */
+/* 📱 CORRECTED Mobile Responsiveness (Media Queries) */
 /* ========================================= */
 
 @media (max-width: 768px) {
-    /* 1. Navigation Fix: Hide the main menu and center the logo */
+    /* 1. Header Layout Fix: Ensure Logo and Icon are on one line */
     header {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px 20px;
+        /* We revert to a single-line flex layout for the logo and the icon */
+        flex-direction: row; 
+        justify-content: space-between; /* Puts space between logo/menu icon */
+        align-items: center; /* Vertically centers logo and icon */
+        height: 80px; /* Gives the header a set height */
+        padding: 0 20px; /* Reduced padding for more space */
+    }
+    
+    /* Ensure the logo image maintains correct size */
+    .logo img {
+        height: 60px; 
     }
 
+    /* 2. Menu Icon Visibility on Mobile */
+    .nav-toggle-label {
+        display: flex; /* Show the hamburger icon */
+        position: static; /* Remove absolute positioning inside this mobile block */
+        height: auto;
+    }
+    
+    /* 3. Navigation Styling (Hidden by default) */
     nav {
-        display: none; /* Hide standard navigation for a mobile menu design */
+        /* Position the navigation panel to drop down from the header */
+        position: absolute;
+        top: 80px; /* Must match the header height to drop exactly below it */
+        left: 0;
+        width: 100%;
+        display: block;
+        background-color: #00695c; /* Menu background color */
+        
+        /* The hiding mechanism: */
+        max-height: 0; /* Use max-height for better transition effect */
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        z-index: 999; /* Ensure it covers content below */
+    }
+    
+    /* 4. Menu List Styling (Stacking the Links) */
+    nav ul {
+        flex-direction: column;
+        padding: 0;
     }
 
-    .logo {
-        margin-bottom: 10px;
+    nav ul li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Separator line */
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 1.1em;
     }
 
-    /* 2. Layout Fixes: Force horizontal layouts to stack vertically */
+    /* 5. The Magic Click: SHOW THE MENU! */
+    /* Selects the NAV element when the checkbox is checked */
+    #nav-toggle:checked ~ nav {
+        max-height: 300px; /* Must be larger than the total height of the menu links */
+    }
+    
+    /* 6. General Layout Fixes */
     .mission-points {
-        flex-direction: column; /* Stacks the 3 mission points vertically */
+        flex-direction: column; 
         gap: 15px;
     }
 
-    .mission-points p {
-        border-left: none; /* Remove the vertical line separators */
-        padding-left: 0;
-        text-align: left;
-    }
-
     .photo-placeholder {
-        grid-template-columns: 1fr; /* Change from 3 columns to 1 column */
-        gap: 10px;
+        grid-template-columns: 1fr;
     }
-
+    
     .donation-options, .details-grid {
-        grid-template-columns: 1fr; /* Stack donation boxes and contact details */
-        gap: 25px;
-    }
-    
-    .event-card, .program-card, .opportunity-card, .option-box {
-        padding: 15px;
-    }
-
-    /* 3. Typography Adjustments */
-    .hero h1 {
-        font-size: 1.8em;
-    }
-    
-    section h2 {
-        font-size: 1.5em;
+        grid-template-columns: 1fr;
     }
 }
 /* --- Logo Image Styling --- */
