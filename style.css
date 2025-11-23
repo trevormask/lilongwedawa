@@ -71,29 +71,39 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 
-/* --- Hamburger Menu Icon Styling (Step 4: Mobile Menu) --- */
-.nav-toggle {
-    display: none; /* Hide the actual checkbox input */
+/* Find this section inside your @media (max-width: 768px) block */
+
+/* 1. Show the hamburger icon lines on mobile */
+.nav-toggle-label span {
+    display: block;
+    background-color: #ffffff;
+    height: 3px;
+    width: 28px;
+    border-radius: 3px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
 }
 
-.nav-toggle-label {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    height: 100%;
-    display: flex; 
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-/* Hide hamburger icon lines on Desktop */
-.nav-toggle-label span,
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-    display: none; 
+    /* These styles make the top and bottom lines appear */
+    display: block;
+    background-color: #ffffff;
+    height: 3px;
+    width: 28px;
+    border-radius: 3px;
+    position: absolute; /* Changed to absolute for reliable positioning relative to span */
+    left: 0;
 }
 
+.nav-toggle-label span::before {
+    content: '';
+    top: -8px;
+}
+.nav-toggle-label span::after {
+    content: '';
+    top: 8px;
+}
 
 /* Hero Section (Step 2: Stunning) */
 .hero {
