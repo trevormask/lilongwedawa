@@ -94,6 +94,69 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 
+/* --- Image Slider Styling --- */
+
+.image-slider-container {
+    background-color: #fff;
+    padding: 40px 0; /* Padding is vertical only, allowing slider to go edge-to-edge (almost) */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    overflow: hidden; /* Necessary to hide the animation overflow */
+}
+
+.image-slider-container h2 {
+    margin-bottom: 20px;
+}
+
+.slider-wrapper {
+    overflow: hidden; 
+    width: 100%; /* The wrapper takes full available width */
+    border-radius: 8px;
+}
+
+.slides {
+    display: flex;
+    width: 400%; /* This holds all 4 images side-by-side */
+    animation: slide-animation 20s infinite; 
+}
+
+.slide-image {
+    width: 25%; /* Each image takes up 1/4 of the .slides container (i.e., 100% of the viewport width) */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Crops if necessary to fill the space */
+    display: block;
+}
+
+/* --- The Magic: CSS Animation Keyframes --- */
+/* The animation cycles every 20 seconds (5s per image) */
+@keyframes slide-animation {
+    /* 0s - 5s: Show Slide 1 (0% shift) */
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); } /* Stay on slide 1 for 4 seconds (20% of 20s) */
+
+    /* 5s - 10s: Show Slide 2 (25% shift) */
+    25% { transform: translateX(-25%); } /* Shift left by one image width */
+    45% { transform: translateX(-25%); }
+
+    /* 10s - 15s: Show Slide 3 (50% shift) */
+    50% { transform: translateX(-50%); }
+    70% { transform: translateX(-50%); }
+
+    /* 15s - 20s: Show Slide 4 (75% shift) */
+    75% { transform: translateX(-75%); }
+    95% { transform: translateX(-75%); }
+    100% { transform: translateX(0); } /* Loop back to the start */
+}
+
+
+/* --- Mobile Fix for Slider --- */
+@media (max-width: 768px) {
+    .image-slider-container {
+        padding: 20px 0; /* Less padding on mobile */
+    }
+}
+
 /* Find this section inside your @media (max-width: 768px) block */
 
 /* 1. Show the hamburger icon lines on mobile */
