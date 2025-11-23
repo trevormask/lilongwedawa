@@ -1,4 +1,8 @@
-/* Basic Reset */
+/* ========================================= */
+/* 🎨 LEDYOC Website Stylesheet - COMPLETE */
+/* ========================================= */
+
+/* Basic Reset & Typography (Step 1: Stunning) */
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +10,13 @@
 }
 
 body {
+    /* Poppins Font for a Modern Look */
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
 }
+
 /* Container */
 main {
     padding: 20px;
@@ -20,19 +26,28 @@ main {
 
 /* Header & Navigation */
 header {
-    background-color: #004d40; /* A deep green for a clean, Islamic feel */
+    background-color: #004d40; /* A deep green */
     color: #ffffff;
     padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Needed for absolute positioning of nav on mobile */
 }
 
+/* Logo Image Styling (Step 3: Larger Logo) */
+.logo img {
+    height: 80px; /* Increased size for desktop */
+    width: auto;
+    display: block;
+}
+
+/* Hide the logo text placeholder */
 .logo {
-    font-size: 1.8em;
-    font-weight: bold;
+    font-size: 0; 
 }
 
+/* Desktop Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -45,29 +60,56 @@ nav ul li {
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
-    padding: 5px 10px;
+    font-weight: 600; /* Bolder font */
+    padding: 10px 15px;
     transition: background-color 0.3s;
-}
-
-nav ul li a:hover, nav ul li a.active {
-    background-color: #00695c; /* Lighter green on hover */
     border-radius: 5px;
 }
 
-/* Hero Section */
+nav ul li a:hover, nav ul li a.active {
+    background-color: #00695c; 
+}
+
+
+/* --- Hamburger Menu Icon Styling (Step 4: Mobile Menu) --- */
+.nav-toggle {
+    display: none; /* Hide the actual checkbox input */
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    height: 100%;
+    display: flex; 
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Hide hamburger icon lines on Desktop */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: none; 
+}
+
+
+/* Hero Section (Step 2: Stunning) */
 .hero {
-    background-color: #e6fffb; /* Lighter, more vibrant background */
+    background-color: #e6fffb; 
     color: #004d40;
-    padding: 100px 40px; /* Increased padding for better spacing */
+    padding: 100px 40px; 
     text-align: center;
     margin-bottom: 30px;
-    border-radius: 12px; /* More pronounced rounded corners */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle 3D effect */
+    border-radius: 12px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
 }
+
 .hero h1 {
     font-size: 2.5em;
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .hero p {
@@ -78,7 +120,7 @@ nav ul li a:hover, nav ul li a.active {
 /* Call to Action Buttons */
 .cta-button {
     display: inline-block;
-    background-color: #ffb300; /* Bright amber for attention */
+    background-color: #ffb300; 
     color: #004d40;
     padding: 12px 25px;
     text-decoration: none;
@@ -98,13 +140,13 @@ nav ul li a:hover, nav ul li a.active {
     margin-top: 15px;
 }
 
-/* General Section Styling */
+/* General Section Styling (Step 2: Stunning) */
 section {
     background-color: #ffffff;
     padding: 40px;
     margin-bottom: 30px;
-    border-radius: 12px; /* Consistent rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More noticeable shadow */
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
 }
 
 section h2 {
@@ -112,6 +154,7 @@ section h2 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 2em;
+    font-weight: 700;
 }
 
 /* Mission Section */
@@ -126,25 +169,20 @@ section h2 {
     flex-basis: 30%;
     border-left: 3px solid #004d40;
     padding-left: 15px;
+    text-align: left;
 }
 
 /* Event Highlight */
 .event-highlight {
-    background-color: #fff8e1; /* Light yellow background */
+    background-color: #fff8e1; 
     border: 1px solid #ffecb3;
 }
 
 .event-details {
     text-align: center;
 }
-.event-details p {
-    margin: 8px 0;
-}
-.event-details strong {
-    color: #ffb300;
-}
 
-/* Photo Gallery Placeholder */
+/* Photo Gallery Images */
 .photo-placeholder {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -152,16 +190,105 @@ section h2 {
     margin-bottom: 20px;
 }
 
-.photo-placeholder > * {
-    background-color: #eee;
-    color: #aaa;
-    height: 150px;
+.photo-placeholder img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 5px; 
+}
+
+
+/* --- Additional Styles for Activities, Get Involved, and Contact Pages --- */
+
+/* General Card Styling (Step 2: Stunning) */
+.event-card, .program-card, .opportunity-card, .option-box {
+    background-color: #f7fcfb; 
+    padding: 20px;
+    border-left: 5px solid #009688; /* Slightly brighter green */
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); 
+    transition: transform 0.3s ease; 
+    margin-bottom: 20px;
+}
+
+/* Hover effect */
+.event-card:hover, .program-card:hover, .opportunity-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); 
+}
+
+.event-card h3, .program-card h3, .opportunity-card h3 {
+    color: #00695c;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+/* Get Involved Page Specific Layouts */
+.donation-options {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.option-box {
+    flex: 1;
+    text-align: center;
+    border: 1px solid #ffb300;
+    border-left: 5px solid #ffb300; 
+}
+
+.bank-details {
+    background-color: #fff8e1; 
+    padding: 15px;
     border-radius: 5px;
-    font-style: italic;
-    font-size: 0.9em;
+    border: 1px dashed #ffb300;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Contact Page Specific Layouts */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #004d40;
+    margin-top: 15px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; 
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.details-grid h3 {
+    color: #ffb300; 
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 
@@ -180,219 +307,82 @@ footer a {
     margin: 0 5px;
 }
 
-footer a:hover {
-    text-decoration: underline;
-}
-/* --- Additional Styles for Activities, Get Involved, and Contact Pages --- */
 
-/* General Card Styling for Activities & Get Involved */
-.event-card, .program-card, .opportunity-card, .option-box {
-    background-color: #f7fcfb; 
-    padding: 20px;
-    border-left: 5px solid #009688; /* Slightly brighter green for emphasis */
-    border-radius: 8px; /* Slightly softer corners than the main section */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Added shadow to cards */
-    transition: transform 0.3s ease; /* Prepare for hover effect */
-}
-/* Add an interactive stunning effect */
-.event-card:hover, .program-card:hover, .opportunity-card:hover {
-    transform: translateY(-5px); /* Card lifts up when hovered */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); /* Shadow deepens */
-}
-.event-card h3, .program-card h3, .opportunity-card h3 {
-    color: #00695c;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.3em;
-}
-
-.details {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 10px;
-}
-
-/* Activities Page Specific Layouts */
-.eid-highlights, .dawa-programs {
-    max-width: 900px;
-    margin: 30px auto;
-}
-
-/* Get Involved Page Specific Layouts */
-.donation-options {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
-}
-
-.option-box {
-    flex: 1;
-    text-align: center;
-    border: 1px solid #ffb300;
-    border-left: 5px solid #ffb300; /* Use amber accent for donations */
-}
-
-.bank-details {
-    background-color: #fff8e1;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px dashed #ffb300;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* Contact Page Specific Layouts (Forms and Details) */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #004d40;
-    margin-top: 15px;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Important for padding/width calculation */
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form button {
-    width: 100%;
-    margin-top: 20px;
-}
-
-.form-note {
-    font-size: 0.8em;
-    text-align: center;
-    color: #cc0000;
-    margin-top: 15px;
-}
-
-.details-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    text-align: center;
-}
-
-.details-grid h3 {
-    color: #ffb300; /* Amber for contact headings */
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    /* 1. Header Changes */
-    header {
-        /* Keep existing header styles (flex-direction: column, etc.) */
-        align-items: flex-start; /* Align logo to the left edge */
-        flex-direction: row; 
-        justify-content: space-between; /* Space logo and icon apart */
-        padding: 15px 20px;
-        height: 80px; /* Give a fixed height to contain the icon */
-    }
-
-    /* 2. Menu Icon Visibility on Mobile */
-    .nav-toggle-label {
-        display: flex; /* Show the hamburger icon */
-    }
-
-    /* 3. Navigation Styling (Hidden by default) */
-    nav {
-        position: absolute;
-        top: 80px; /* Below the header */
-        left: 0;
-        width: 100%;
-        display: block;
-        background-color: #00695c; /* Slightly lighter green for the menu background */
-        height: 0; /* Initially collapse the menu */
-        overflow: hidden;
-        transition: height 0.3s ease;
-    }
-    
-    /* 4. Menu List Styling */
-    nav ul {
-        flex-direction: column;
-        padding: 10px 0;
-    }
-
-    nav ul li {
-        margin: 0;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    nav ul li a {
-        display: block;
-        padding: 15px;
-        background-color: transparent;
-    }
-
-    /* 5. The Magic Click: SHOW THE MENU! */
-    #nav-toggle:checked + .nav-toggle-label + nav {
-        height: 270px; /* Adjust this height based on the number of links (e.g., 5 links * 54px each) */
-    }
-    /* ... rest of mobile styles ... */
-}
 /* ========================================= */
-/* 📱 CORRECTED Mobile Responsiveness (Media Queries) */
+/* 📱 Mobile Responsiveness (Media Queries) */
 /* ========================================= */
 
 @media (max-width: 768px) {
-    /* 1. Header Layout Fix: Ensure Logo and Icon are on one line */
-    header {
-        /* We revert to a single-line flex layout for the logo and the icon */
-        flex-direction: row; 
-        justify-content: space-between; /* Puts space between logo/menu icon */
-        align-items: center; /* Vertically centers logo and icon */
-        height: 80px; /* Gives the header a set height */
-        padding: 0 20px; /* Reduced padding for more space */
+    
+    /* 1. Show the hamburger icon lines on mobile */
+    .nav-toggle-label span {
+        display: block;
+        background-color: #ffffff;
+        height: 3px;
+        width: 28px;
+        border-radius: 3px;
+        position: relative;
+        transition: all 0.2s ease-in-out;
     }
     
-    /* Ensure the logo image maintains correct size */
+    .nav-toggle-label span::before {
+        content: '';
+        top: -8px;
+        display: block;
+        background-color: #ffffff;
+        height: 3px;
+        width: 28px;
+        border-radius: 3px;
+        position: relative;
+    }
+    
+    .nav-toggle-label span::after {
+        content: '';
+        top: 8px;
+        display: block;
+        background-color: #ffffff;
+        height: 3px;
+        width: 28px;
+        border-radius: 3px;
+        position: relative;
+    }
+
+
+    /* 2. Header Layout Fix: Ensure Logo and Icon are on one line */
+    header {
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center; 
+        height: 80px; 
+        padding: 0 20px;
+    }
+
+    /* Logo size adjustment for mobile */
     .logo img {
-        height: 60px; 
+        height: 60px; /* Smaller logo on mobile */
     }
 
-    /* 2. Menu Icon Visibility on Mobile */
+    /* Set the icon label position on mobile */
     .nav-toggle-label {
-        display: flex; /* Show the hamburger icon */
-        position: static; /* Remove absolute positioning inside this mobile block */
+        position: static;
         height: auto;
     }
-    
+
     /* 3. Navigation Styling (Hidden by default) */
     nav {
-        /* Position the navigation panel to drop down from the header */
         position: absolute;
-        top: 80px; /* Must match the header height to drop exactly below it */
+        top: 80px; 
         left: 0;
         width: 100%;
         display: block;
-        background-color: #00695c; /* Menu background color */
-        
-        /* The hiding mechanism: */
-        max-height: 0; /* Use max-height for better transition effect */
+        background-color: #00695c;
+        max-height: 0; /* Hidden state */
         overflow: hidden;
         transition: max-height 0.4s ease-out;
-        z-index: 999; /* Ensure it covers content below */
+        z-index: 999;
     }
     
-    /* 4. Menu List Styling (Stacking the Links) */
+    /* Hide the default desktop navigation link layout */
     nav ul {
         flex-direction: column;
         padding: 0;
@@ -401,7 +391,7 @@ footer a:hover {
     nav ul li {
         margin: 0;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Separator line */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
     
     nav ul li a {
@@ -410,16 +400,21 @@ footer a:hover {
         font-size: 1.1em;
     }
 
-    /* 5. The Magic Click: SHOW THE MENU! */
-    /* Selects the NAV element when the checkbox is checked */
+    /* 4. The Magic Click: SHOW THE MENU! */
     #nav-toggle:checked ~ nav {
-        max-height: 300px; /* Must be larger than the total height of the menu links */
+        max-height: 300px; 
     }
     
-    /* 6. General Layout Fixes */
+    /* 5. General Layout Fixes (Force Stacking) */
     .mission-points {
         flex-direction: column; 
         gap: 15px;
+    }
+
+    .mission-points p {
+        border-left: none;
+        padding-left: 0;
+        text-align: left;
     }
 
     .photo-placeholder {
@@ -429,67 +424,4 @@ footer a:hover {
     .donation-options, .details-grid {
         grid-template-columns: 1fr;
     }
-}
-/* --- Logo Image Styling --- */
-
-/* Target the image inside the logo container */
-.logo img {
-    /* Set the maximum height for the logo */
-    height: 90px; /* <--- CHANGED THIS VALUE */
-    width: auto; /* Maintains the correct aspect ratio */
-    display: block; /* Ensures consistent layout */
-}
-
-/* Hide the logo text placeholder */
-.logo {
-    /* We are now using an image inside, so we can clear the text styling */
-    font-size: 0; 
-}
-
-/* Ensure the logo stacks correctly on mobile */
-@media (max-width: 768px) {
-    .logo {
-        margin-bottom: 10px;
-    }
-    .logo img {
-        height: 60px; /* Also increased the mobile height for consistency */
-    }
-}
-/* --- Hamburger Menu Icon Styling --- */
-.nav-toggle {
-    display: none; /* Hide the actual checkbox input */
-}
-
-.nav-toggle-label {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    height: 100%;
-    display: none; /* Hide icon by default (for desktop) */
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000; /* Ensure it's always clickable */
-}
-
-/* Creating the three lines of the hamburger */
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    display: block;
-    background-color: #ffffff; /* White icon color */
-    height: 3px;
-    width: 28px;
-    border-radius: 3px;
-    position: relative;
-    transition: all 0.2s ease-in-out;
-}
-
-.nav-toggle-label span::before {
-    content: '';
-    top: -8px;
-}
-
-.nav-toggle-label span::after {
-    content: '';
-    top: 8px;
 }
