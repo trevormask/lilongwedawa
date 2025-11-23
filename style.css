@@ -296,10 +296,57 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-    /* Responsive adjustment for smaller screens */
-    .donation-options, .details-grid {
-        grid-template-columns: 1fr; /* Stack items vertically */
+    /* 1. Header Changes */
+    header {
+        /* Keep existing header styles (flex-direction: column, etc.) */
+        align-items: flex-start; /* Align logo to the left edge */
+        flex-direction: row; 
+        justify-content: space-between; /* Space logo and icon apart */
+        padding: 15px 20px;
+        height: 80px; /* Give a fixed height to contain the icon */
     }
+
+    /* 2. Menu Icon Visibility on Mobile */
+    .nav-toggle-label {
+        display: flex; /* Show the hamburger icon */
+    }
+
+    /* 3. Navigation Styling (Hidden by default) */
+    nav {
+        position: absolute;
+        top: 80px; /* Below the header */
+        left: 0;
+        width: 100%;
+        display: block;
+        background-color: #00695c; /* Slightly lighter green for the menu background */
+        height: 0; /* Initially collapse the menu */
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    
+    /* 4. Menu List Styling */
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        background-color: transparent;
+    }
+
+    /* 5. The Magic Click: SHOW THE MENU! */
+    #nav-toggle:checked + .nav-toggle-label + nav {
+        height: 270px; /* Adjust this height based on the number of links (e.g., 5 links * 54px each) */
+    }
+    /* ... rest of mobile styles ... */
 }
 /* ========================================= */
 /* 📱 Mobile Responsiveness (Media Queries) */
@@ -380,4 +427,42 @@ footer a:hover {
     .logo img {
         height: 60px; /* Also increased the mobile height for consistency */
     }
+}
+/* --- Hamburger Menu Icon Styling --- */
+.nav-toggle {
+    display: none; /* Hide the actual checkbox input */
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    height: 100%;
+    display: none; /* Hide icon by default (for desktop) */
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's always clickable */
+}
+
+/* Creating the three lines of the hamburger */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background-color: #ffffff; /* White icon color */
+    height: 3px;
+    width: 28px;
+    border-radius: 3px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-toggle-label span::before {
+    content: '';
+    top: -8px;
+}
+
+.nav-toggle-label span::after {
+    content: '';
+    top: 8px;
 }
